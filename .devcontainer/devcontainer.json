@@ -1,0 +1,53 @@
+{
+  "name": "dotfiles-development",
+  "image": "mcr.microsoft.com/vscode/devcontainers/base:ubuntu-22.04",
+  "containerEnv": {
+    "TZ": "Asia/Tokyo"
+  },
+  "runArgs": ["--init"],
+  "mounts": [
+    "source=${localEnv:HOME}/.zsh_history,target=/home/vscode/.zsh_history,type=bind,consistency=cached"
+  ],
+  "onCreateCommand": "${containerWorkspaceFolder}/setup.sh",
+  "features": {},
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.fontFamily": "'0xProto Nerd Font', monospace",
+        "editor.formatOnSave": true,
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "terminal.integrated.profiles.linux": {
+          "zsh": {
+            "path": "/usr/bin/zsh"
+          }
+        },
+        "[json][jsonc]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.codeActionsOnSave": {
+            "source.fixAll": "explicit"
+          }
+        },
+        "[shellscript]": {
+          "editor.defaultFormatter": "foxundermoon.shell-format"
+        }
+      },
+      "extensions": [
+        // Docker
+        "ms-azuretools.vscode-docker",
+        // Git
+        "eamodio.gitlens",
+        // Github actions
+        "github.vscode-github-actions",
+        // Json
+        "esbenp.prettier-vscode",
+        // Shell script
+        "foxundermoon.shell-format",
+        "mads-hartmann.bash-ide-vscode",
+        "rogalmic.bash-debug",
+        "timonwong.shellcheck",
+        // Toml
+        "tamasfe.even-better-toml"
+      ]
+    }
+  }
+}
