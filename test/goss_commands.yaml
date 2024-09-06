@@ -1,0 +1,9 @@
+---
+command:
+  chezmoi:
+    exec: chezmoi --version
+    exit-status: 0
+
+  goss:
+    exec: goss --version
+    exit-status: 0
