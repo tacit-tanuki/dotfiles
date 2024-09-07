@@ -1,5 +1,9 @@
 ---
 command:
+  aqua:
+    exec: aqua --version
+    exit-status: 0
+
   chezmoi:
     exec: chezmoi --version
     exit-status: 0
