@@ -9,5 +9,5 @@ command:
     exit-status: 0
 
   goss:
-    exec: goss --version
+    exec: $(aqua root-dir)/bin/goss --version
     exit-status: 0
